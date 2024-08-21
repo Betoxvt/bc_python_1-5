@@ -14,8 +14,12 @@ except ZeroDivisionError:
     print('Erro de divisão por zero')
 except KeyboardInterrupt:
     print('OK, pulamos este exercício')
-except ValueError:
-    print('Ops, não é um número inteiro')
+except ValueError as e:
+    print(e)
+else:
+    print('Tudo ocorreu bem')
+finally:
+    print('O importante é participar!')
 print('-='*30)
 
 # 5. Escreva um programa que calcule o quadrado de um número fornecido pelo usuário.
