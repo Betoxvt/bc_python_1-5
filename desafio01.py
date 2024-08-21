@@ -3,19 +3,29 @@
 # Constante do KPI 2024
 CONSTANTE_BONUS = 1000
 
-# Solicita o nome do usuário
+# Imprime um texto com o solicitado pelo desafio
+
+# 1) Solicita ao usuário que digite seu nome
 nome = str(input("Insira seu nome: ").strip().title())
 
-# Solicita o salário do usuário e transforma em ponto flutuante
+# 2) Solicita ao usuário que digite o valor do seu salário
+# Converte a entrada para um número de ponto flutuante
 salario = float(input("Insira o valor de seu salário mensal: R$"))
 
-# Solicita o bônus em porcentagem e transforma em ponto flutuante
-bonus_percent = float(input("Insira o bônus (%): ")) / 100
+# 3) Solicita ao usuário que digite o valor do bônus recebido
+# Converte a entrada para um número de ponto flutuante
+bonus = float(input("Insira o bônus (%): ")) / 100
 
-# Armazena os cálculos em variáveis
-bonus = bonus_percent * salario
-kpi = CONSTANTE_BONUS + bonus
+# 4) Calcule o valor do bônus final
+bonus_final = bonus * salario
+
+# 5) Imprima cálculo do KPI para o usuário
+kpi = CONSTANTE_BONUS + bonus_final
+print(f'Cálculo do KPI:\nKPI = 1000 + ({salario} X {bonus}) = R${kpi}\nObservação: {bonus*100}% representa {bonus}')
+
+# 6) Imprime a mensagem personalizada incluindo o nome do usuário, salário e bônus
 novo_salario = salario + kpi
-
-# Imprime um texto com o solicitado pelo desafio
 print(f'Saudações {nome}, seu salário agora é de R${novo_salario:.2f}')
+
+# Bônus: Quantos bugs e riscos você consegue identificar nesse programa?
+# Problemas em erros de digitação, como usar vírgula ao invés de ponto para os números com casas decimais ou trocar a ordem das entradas.
