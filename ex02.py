@@ -4,6 +4,20 @@
 # 2. Crie um programa que receba um número do usuário e calcule o resto da divisão desse número por 5.
 # 3. Desenvolva um programa que multiplique dois números fornecidos pelo usuário e mostre o resultado.
 # 4. Faça um programa que peça dois números inteiros e imprima a divisão inteira do primeiro pelo segundo.
+
+try:
+    n1 = int(input("Inserir um número inteiro: "))
+    n2 = int(input("Inserir outro número inteiro: "))
+    resultado = n1 // n2
+    print(f'A divisão inteira de {n1} por {n2} é {resultado}')
+except ZeroDivisionError:
+    print('Erro de divisão por zero')
+except KeyboardInterrupt:
+    print('OK, pulamos este exercício')
+except ValueError:
+    print('Ops, não é um número inteiro')
+print('-='*30)
+
 # 5. Escreva um programa que calcule o quadrado de um número fornecido pelo usuário.
 
 # #### Números de Ponto Flutuante (`float`)
@@ -21,11 +35,18 @@
 # 13. Desenvolva um programa que peça ao usuário para inserir uma frase e, em seguida, imprima esta frase sem espaços em branco no início e no final.
 # 14. Faça um programa que peça ao usuário para digitar uma data no formato "dd/mm/aaaa" e, em seguida, imprima o dia, o mês e o ano separadamente.
 
-data_do_user = input("Insira uma data no formato dd/mm/aaaa: ")
-data_lista = data_do_user.split('/')
-print(f'Dia {data_lista[0]}')
-print(f'Mês {data_lista[1]}')
-print(f'Ano {data_lista[2]}')
+try:
+    data_do_user = input("Insira uma data no formato dd/mm/aaaa: ")
+    data_lista = data_do_user.split('/')
+    print(f'Dia {int(data_lista[0])}')
+    print(f'Mês {int(data_lista[1])}')
+    print(f'Ano {(data_lista[2])}')
+except IndexError:
+    print('Ops, por favor verifique o formato dd/mm/aaaa')
+except ValueError:
+    print('Utilize apenas números e no formato dd/mm/aaaa')
+except:
+    print('Ops! Algo deu errado.')
 print('-='*30)
 
 
