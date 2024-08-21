@@ -1,8 +1,37 @@
 # #### Inteiros (`int`)
 
 # 1. Escreva um programa que soma dois números inteiros inseridos pelo usuário.
+
+try:
+    n1 = int(input('Insira o primeiro número: '))
+    n2 = int(input('Insira o segundo número: '))
+    resposta = n1 + n2
+    print(f'A Soma é {resposta}')
+except:
+    pass
+print('-='*30)
+
 # 2. Crie um programa que receba um número do usuário e calcule o resto da divisão desse número por 5.
+
+try:
+    n1 = int(input('Insira um número: '))
+    resposta = n1 % 5
+    print(f'O resto de {n1}/5 é {resposta}')
+except:
+    pass
+print('-='*30)
+
 # 3. Desenvolva um programa que multiplique dois números fornecidos pelo usuário e mostre o resultado.
+
+try:
+    n1 = int(input('Insira um número: '))
+    n2 = int(input('Insira outro número: '))
+    resposta = n1 * n2
+    print(f'A multiplicação entre {n1} e {n2} é {resposta}')
+except:
+    pass
+print('-='*30)
+
 # 4. Faça um programa que peça dois números inteiros e imprima a divisão inteira do primeiro pelo segundo.
 
 try:
@@ -23,6 +52,14 @@ finally:
 print('-='*30)
 
 # 5. Escreva um programa que calcule o quadrado de um número fornecido pelo usuário.
+
+try:
+    n1 = int(input('Insira um número: '))
+    resposta = n1 ** 2
+    print(f'{n1} ao quadrado é {resposta}')
+except:
+    pass
+print('-='*30)
 
 # #### Números de Ponto Flutuante (`float`)
 
