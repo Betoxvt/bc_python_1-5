@@ -6,22 +6,56 @@ CONSTANTE_BONUS = 1000
 # Imprime um texto com o solicitado pelo desafio
 
 # 1) Solicita ao usuário que digite seu nome
-nome = str(input("Insira seu nome: ").strip().title())
+try:
+    nome = str(input("Insira seu nome: ").strip().title())
+    if any(char.isdigit() for char in nome):
+        print('Nome não deve conter números')
+        exit()
+    elif not nome:
+        print('Nome não deve estar vazio')
+        exit()
+except Exception as e:
+    print(f'Erro, {e}')
+    exit()
+else:
+    print(f'Nome válido registrado: {nome}')
 
 # 2) Solicita ao usuário que digite o valor do seu salário
 # Converte a entrada para um número de ponto flutuante
-salario = float(input("Insira o valor de seu salário mensal: R$"))
+
+try:
+    salario = float(input("Insira o valor de seu salário mensal: R$").strip().replace(',', '.'))
+    if salario < 0:
+        print('O salário deve ser um número positivo')
+        exit()
+except ValueError:
+    print('Entrada inválida. O salário deve ser um número')
+    exit()
+except Exception as e:
+    print(f'Erro, {e}')
+else:
+    print(f'Salário registrado: R${salario:.2f}')
 
 # 3) Solicita ao usuário que digite o valor do bônus recebido
 # Converte a entrada para um número de ponto flutuante
-bonus = float(input("Insira o bônus (%): ")) / 100
+
+try:
+    bonus = float(input("Insira o bônus (%): ")) / 100
+    if bonus < 0:
+        print('O bônus deve ser um número positivo')
+        exit()
+except ValueError:
+    print('O bônus deve ser um número')
+    exit()
+else:
+    print(f'Bônus de {bonus*100}% = {bonus}')
 
 # 4) Calcule o valor do bônus final
 bonus_final = bonus * salario
 
 # 5) Imprima cálculo do KPI para o usuário
 kpi = CONSTANTE_BONUS + bonus_final
-print(f'Cálculo do KPI:\nKPI = 1000 + ({salario} X {bonus}) = R${kpi}\nObservação: {bonus*100}% representa {bonus}')
+print(f'Cálculo do KPI:\nKPI = 1000 + ({salario} X {bonus}) = R${kpi}')
 
 # 6) Imprime a mensagem personalizada incluindo o nome do usuário, salário e bônus
 novo_salario = salario + kpi
