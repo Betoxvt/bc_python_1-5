@@ -304,10 +304,10 @@
 # try:
 #     n = int(input('Digite um número: '))
 # except (TypeError, ValueError):
-#     print('Apenas números inteiros)
+#     print('Apenas números inteiros')
 # except KeyboardInterrupt:
 #     print('Terminado pelo usuário')
-#     break
+#     exit()
 # else:
 #     if n%2 == 0:
 #         print('É par!')
@@ -317,6 +317,8 @@
 #     for i in range (1, n+1):
 #         if n%i == 0:
 #             c += 1
+#             if c > 2:
+#                 break
 #     if c == 2 and n >=2:
 #         print ('É primo!')
 #     else:
