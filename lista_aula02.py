@@ -300,25 +300,63 @@
 # 24: Classificador de Números 
 
 # PAR ou IMPAR? PRIMO?
-try:
-    n = int(input('Digite um número: '))
-except:
-    pass
-else:
-    if n%2 == 0:
-        print('É par!')
-    else:
-        print('É ímpar!')
-    c = 0
-    for i in range (1, n+1):
-        if n%i == 0:
-            c += 1
-    if c == 2 and n >=2:
-        print ('É primo!')
-    else:
-        print('Não é primo!')
 
+# try:
+#     n = int(input('Digite um número: '))
+# except (TypeError, ValueError):
+#     print('Apenas números inteiros)
+# except KeyboardInterrupt:
+#     print('Terminado pelo usuário')
+#     break
+# else:
+#     if n%2 == 0:
+#         print('É par!')
+#     else:
+#         print('É ímpar!')
+#     c = 0
+#     for i in range (1, n+1):
+#         if n%i == 0:
+#             c += 1
+#     if c == 2 and n >=2:
+#         print ('É primo!')
+#     else:
+#         print('Não é primo!')
+        
+# Organizar em ordem crescente no input, 5 números
 
-
+# cresc = []
+# for i in range(5):
+#     n = int(input(f'Digite o {i+1}º número: '))
+#     if i == 0 or n > cresc[-1]:
+#         cresc.append(n)
+#         print(f'{n} inserido ao final da lista')
+#     else:
+#         p = 0
+#         while p < len(cresc):
+#             if n <= cresc[p]:
+#                 cresc.insert(p, n)
+#                 print(f'{n} inserido na posição {p} da lista')
+#                 break
+#             p += 1
+# print(cresc)
 
 # 25: Conversão de Tipo com Validação
+
+# try:
+#     txt = input('Digite algo: ').strip().replace(',', '.')
+# except KeyboardInterrupt:
+#     print('\nTerminado pelo usuário')
+# else:
+#     try:
+#         inteiro = int(txt)
+#     except (ValueError, TypeError):
+#         print('Não é um número inteiro')
+#         try:
+#             ponto = float(txt)
+#         except (ValueError, TypeError):
+#             print('Não é um número de ponto flutuante')
+#         else:
+#             print('É um número de ponto flutuante')
+#     else:
+#         print('É um número inteiro')
+        
