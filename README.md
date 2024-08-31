@@ -11,3 +11,16 @@
     - tipos de erros;
     - try, except, else, finally, if isinstance(numero, int);
     - use os try e except para diferenciar seu código
+## Aula03
+1. Controle de fluxo
+* Precisamos definir uma rota de como a aplicação deve funcionar;
+* Airflow > Ferramenta de orquestração;
+* if elif else... testes em ordem, o que for, será executado;
+
+2. Debug
+* Faz linha por linha devagar para testar o script/código;
+* No VSCode você pode adicionar os pontos de parada, na esquerda do código ou simplesmente mandar fazer linha por linha;
+* Tem uma janela que mostra as variáveis sendo atribuidas (locais e globais);
+* Permite ver o fluxo e a organização do programa;
+
+3. Listas e dicionários
