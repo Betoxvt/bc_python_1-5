@@ -221,14 +221,66 @@
 ### Exercício 11. Leitura de Dados até Flag
 # Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
 
+# dados=[]
+# while True:
+#     dado = input('Insira o dado ou <sair>: ').strip()
+#     if dado.lower() == 'sair':
+#         break
+#     else:
+#         dados.append(dado)
+# print(dados)
+
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
+
+# numero = int(input('Insira um número entre 1 e 10: '))
+# while not 1 < numero < 10:
+#     numero = int(input('Inválido... Apenas entre 1 e 10: '))
+# print('Número valido!')
 
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
 
+# from time import sleep
+
+# pagina_atual = 1
+# pagina_total = 5
+# while pagina_atual <= pagina_total:
+#     print(f'Processando página {pagina_atual} de {pagina_total}')
+#     sleep(0.5)
+#     pagina_atual += 1
+# print('Processamento concluído')
+
 ### Exercício 14. Tentativas de Conexão
 # Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
 
+# from time import sleep
+
+# tentativa_atual = 1
+# tentativa_total = 5
+# while tentativa_atual <= tentativa_total:
+#     print('Reconectando...')
+#     conection = bool(input('<vazio> para False ou, <any> para True'))
+#     if conection:
+#         print('Conexão bem-sucedida!')
+#         break
+#     print('Não foi possível reconectar.')
+#     sleep(0.5)
+#     tentativa_atual += 1
+# else:
+#     print('Falha ao conectar. Máximo de tentativas excedido')
+
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
+
+# itens = [1, 2, 3, "parar", 4, 5]
+
+# i = 0
+# while i < len(itens):
+#     if itens[i] == "parar":
+#         print('Parada encontrada, encerrando processamento.')
+#         break
+#     print(f'Processando item: {itens[i]}')
+#     i += 1
+# else:
+#     print(f'Todos os itens foram processados')
