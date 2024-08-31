@@ -6,49 +6,15 @@ CONSTANTE_BONUS = 1000
 # Imprime um texto com o solicitado pelo desafio
 
 # 1) Solicita ao usuário que digite seu nome
-try:
-    nome = str(input("Insira seu nome: ").strip().title())
-    if any(char.isdigit() for char in nome):
-        print('Nome não deve conter números')
-        exit()
-    elif not nome:
-        print('Nome não deve estar vazio')
-        exit()
-except Exception as e:
-    print(f'Erro, {e}')
-    exit()
-else:
-    print(f'Nome válido registrado: {nome}')
+nome = str(input("Insira seu nome: ").strip().title())
 
 # 2) Solicita ao usuário que digite o valor do seu salário
 # Converte a entrada para um número de ponto flutuante
-
-try:
-    salario = float(input("Insira o valor de seu salário mensal: R$").strip().replace(',', '.'))
-    if salario < 0:
-        print('O salário deve ser um número positivo')
-        exit()
-except ValueError:
-    print('Entrada inválida. O salário deve ser um número')
-    exit()
-except Exception as e:
-    print(f'Erro, {e}')
-else:
-    print(f'Salário registrado: R${salario:.2f}')
+salario = float(input("Insira o valor de seu salário mensal: R$").strip().replace(',', '.'))
 
 # 3) Solicita ao usuário que digite o valor do bônus recebido
 # Converte a entrada para um número de ponto flutuante
-
-try:
-    bonus = float(input("Insira o bônus (%): ")) / 100
-    if bonus < 0:
-        print('O bônus deve ser um número positivo')
-        exit()
-except ValueError:
-    print('O bônus deve ser um número')
-    exit()
-else:
-    print(f'Bônus de {bonus*100}% = {bonus}')
+bonus = float(input("Insira o bônus (%): ")) / 100
 
 # 4) Calcule o valor do bônus final
 bonus_final = bonus * salario
