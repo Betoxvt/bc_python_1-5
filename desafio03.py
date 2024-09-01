@@ -12,15 +12,11 @@ try:
     # 1) Solicita ao usuário que digite seu nome
     while not nome_valido:
         try:
-            while not nome_valido:
-                nome = str(input("Insira seu nome: ").strip().title())
-                if nome.replace("'", "").replace(' ', '').isalpha():
-                    nome_valido = True
-                else:
-                    print('O nome contém caractéres inválidos.')
-        except Exception as e:
-            print(f'Erro, {e}')
-            nome_valido = False
+            nome = str(input("Insira seu nome: ").strip().title())
+            if not nome.replace("'", "").replace(' ', '').isalpha():
+                raise ValueError('O nome contém caractéres inválidos.')
+        except ValueError as e:
+            print(f'ERRO. {e}')
         else:
             print(f'Nome válido registrado: {nome}')
             nome_valido = True
@@ -29,18 +25,13 @@ try:
     # Converte a entrada para um número de ponto flutuante
     while not salario_valido:
         try:
-            while not salario_valido:
-                salario = float(input("Insira o valor de seu salário mensal: R$").strip().replace(',', '.'))
-                if salario < 0:
-                    print('O salário deve ser um número positivo')
-                else:
-                    salario_valido = True
-        except ValueError:
-            print('Entrada inválida. O salário deve ser um número')
-            salario_valido = False
+            salario = float(input("Insira o valor de seu salário mensal: R$").strip().replace(',', '.'))
+            if salario < 0:
+                raise ValueError('O salário deve ser um número positivo')
+        except ValueError as e:
+            print(f'Valor inválido. {e}')
         except Exception as e:
             print(f'Erro, {e}')
-            salario_valido = False
         else:
             print(f'Salário registrado: R${salario:.2f}')
             salario_valido = True
@@ -49,18 +40,13 @@ try:
     # Converte a entrada para um número de ponto flutuante
     while not bonus_valido:
         try:
-            while not bonus_valido:
-                bonus = float(input("Insira o bônus (%): ")) / 100
-                if bonus < 0:
-                    print('O bônus deve ser um número positivo')
-                else:
-                    bonus_valido = True
-        except ValueError:
-            print('O bônus deve ser um número')
-            bonus_valido = False
+            bonus = float(input("Insira o bônus (%): ")) / 100
+            if bonus < 0:
+                raise ValueError('O bônus deve ser um número positivo')
+        except ValueError as e:
+            print(f'Valor inválido. {e}')
         except Exception as e:
             print(f'Erro, {e}')
-            bonus_valido = False
         else:
             print(f'Bônus de {bonus*100}% = {bonus}')
             bonus_valido = True
