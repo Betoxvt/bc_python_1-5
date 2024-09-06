@@ -57,14 +57,19 @@ def isso(n: list) -> list:
 ## Aula05
 ### Projeto 01: Leitura e Escrita de Arquivos, lendo 1 bilhão de linhas
 1. Como processar 1 bilhão de linhas? Quem é mais rápido, Pandas, Polars ou Duckdb?
+Os testes foram realizados em um laptop equipado com um processador M1 da Apple e 8GB de RAM. As implementações utilizaram abordagens puramente Python, Pandas, Dask, Polars e DuckDB. Os resultados de tempo de execução para processar o arquivo de 1 bilhão de linhas são apresentados abaixo:
 
-* PC com 8GB de RAM > um GROUP BY e um ORDER BY
-    * Python            não rodou
-    * Python + Pandas   não rodou
-    * Python + Polars   33.86s
-    * Python + Duckdb   14.98s
+| Implementação | Tempo |
+| --- | --- |
+| Bash + awk | 25 minutos |
+| Python | 20 minutos |
+| Python + Pandas | 263 sec |
+| Python + Dask | 155.62 sec  |
+| Python + Polars | 33.86 sec |
+| Python + Duckdb | 14.98 sec |
 
 * Construir uma pipeline, com testes de qualidade em cada processo da ETL.
 * if __name__ == "__main__" serve para escolher o que quer que rode caso importarem o script como módulo, pois se rodar direto o __name__ é __main__, se importar para outro código este outro se chamará __main__.
 
-2. Desafio: Criar melhorias para o projeto. (Fork)
+2. Desafio: Criar melhorias para o projeto. [Fork One-Billion-Row-Challenge-Python](https://github.com/Betoxvt/One-Billion-Row-Challenge-Python)
+3. Criei um repositório para um projeto disso usando vaex [1b-row-vaex](https://github.com/Betoxvt/1b-row-vaex)
