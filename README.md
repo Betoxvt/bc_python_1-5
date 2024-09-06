@@ -53,3 +53,18 @@
 def isso(n: list) -> list:
 * PEP: nome_bem_completo, tipar as coisas
 * Pydantic é fod# no controle, dar uma olhada nisso
+
+## Aula05
+### Projeto 01: Leitura e Escrita de Arquivos, lendo 1 bilhão de linhas
+1. Como processar 1 bilhão de linhas? Quem é mais rápido, Pandas, Polars ou Duckdb?
+
+* PC com 8GB de RAM > um GROUP BY e um ORDER BY
+    * Python            não rodou
+    * Python + Pandas   não rodou
+    * Python + Polars   33.86s
+    * Python + Duckdb   14.98s
+
+* Construir uma pipeline, com testes de qualidade em cada processo da ETL.
+* if __name__ == "__main__" serve para escolher o que quer que rode caso importarem o script como módulo, pois se rodar direto o __name__ é __main__, se importar para outro código este outro se chamará __main__.
+
+2. Desafio: Criar melhorias para o projeto. (Fork)
